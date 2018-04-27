@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="yeahApp">
+ <head>
+  <script   src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+<script src="yeah.js"></script>
+ </head>
+ <body>
+  <div ng-controller="yeah as app">
+
+
+   <br /><br />
+   {{key}}
+   <h2 ng-if="key != ''"> Hello {{key}} </h2>
+   <br />
+  </div>
+ </body>
+</html>
