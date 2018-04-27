@@ -12,6 +12,9 @@
    {{key}}
    <h2 ng-if="key != ''"> Hello {{key}} </h2>
    <br />
+   <h1 ng-repeat="x in booklist.data">
+      <div ng-repeat="(y,z) in x">{{y}} :: {{z}}</div>
+    </h1>
   </div>
  </body>
 </html>
