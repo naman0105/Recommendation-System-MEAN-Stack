@@ -15,8 +15,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/yeah', (req, res) => {
-  res.sendFile(path.resolve('public/yeah.html'));
+router.get('/book', (req, res) => {
+  res.sendFile(path.resolve('public/book.html'));
 })
 
 router.get('/api', (req, res) => {
