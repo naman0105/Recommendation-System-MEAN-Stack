@@ -8,6 +8,7 @@ angular.module('loginApp', [])
    console.log("Hello "+document.cookie);
     $http.get('/loginuser?name='+$scope.userName).then(function(success){
          console.log("sending successfull");
+         $location.path('/').replace();
     });
   }
 })

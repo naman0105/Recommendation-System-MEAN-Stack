@@ -69,5 +69,7 @@ router.get('/loginuser', function(req,res){
       db.close();
     });
   });
+  console.log("hello hi")
+  // router.redirect('/');
 })
 module.exports = router;
