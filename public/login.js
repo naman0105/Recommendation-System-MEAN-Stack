@@ -6,8 +6,8 @@ angular.module('loginApp', [])
  $scope.submit= function(){
    document.cookie = "user = "+$scope.userName;
    console.log("Hello "+document.cookie);
-    /*$http.post('/addBookData',data).then(function(success){
+    $http.get('/loginuser?name='+$scope.userName).then(function(success){
          console.log("sending successfull");
-    });*/
+    });
   }
 })

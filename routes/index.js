@@ -53,12 +53,21 @@ router.post('/addBookData', function(req, res){
 })
 
 router.get('/login', function (req, res) {
-
   //req.session.userName=myDet["emailId"];
   res.sendFile(path.resolve('public/login.html'));
-
-
-
 })
 
+router.get('/loginuser', function(req,res){
+  console.log("from the back-end" + req.query.name);
+  data = { name : req.query.name, books : [] }
+  mongo.connect(url,function(err,db){
+    assert.equal(null,err);
+    var dbo = db.db("books");
+    dbo.collection("users").insertOne(data, function(err, res) {
+      if (err) throw err;
+      console.log("1 user inserted");
+      db.close();
+    });
+  });
+})
 module.exports = router;
