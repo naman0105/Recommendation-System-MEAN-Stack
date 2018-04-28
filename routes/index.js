@@ -33,8 +33,6 @@ router.get('/books', function (req, res) {
   })
 })
 
-
-
 router.get('/addBook', function (req, res) {
   res.sendFile(path.resolve('public/addBook.html'));
 })
@@ -62,4 +60,5 @@ router.get('/login', function (req, res) {
 
 
 })
+
 module.exports = router;
