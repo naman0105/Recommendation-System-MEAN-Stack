@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0062)https://mdbootstrap.com/previews/freebies/jumbotron/index.html -->
-<html lang="en" ng-app="booksapp" class="gr__mdbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en" ng-app="addBookApp" class="gr__mdbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,13 +9,13 @@
     <title>Material Design Bootstrap</title>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css"  href="./dark theam_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./dark theam_files/font-awesome.min.css">
 
     <!-- Bootstrap core CSS -->
-    <link href="./dark theam_files/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="./dark theam_files/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="./dark theam_files/mdb.min.css" type="text/css"  rel="stylesheet">
+    <link href="./dark theam_files/mdb.min.css" rel="stylesheet">
 
     <!-- Template styles -->
     <style rel="stylesheet">
@@ -53,7 +53,7 @@
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
-    <script src="book.js"></script>
+    <script src="addBook.js"></script>
 
 </head>
 
@@ -70,13 +70,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link waves-effect waves-light" href="#">Home
-                                <span class="sr-only">(current)</span>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="/">Home
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" href="/addBook">Add book</a>
+                        <li class="nav-item active">
+                            <a class="nav-link waves-effect waves-light" href="/addBook">Add book
+                                <span class="sr-only">(current)</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -86,72 +87,34 @@
 
     </header>
 
-    <main ng-controller="books as app">
-
-        <!--Main layout-->
+    <main ng-controller="addBook as app">
         <div class="container">
-            <!--First row-->
-            <div class="row wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
-                <div class="col-md-12">
-                    <!--Card-->
-                    <div class="card">
-                        <!--Card content-->
-                        <div class="card-body text-center mb-3">
-                            <!--Title-->
-                            <h3 class="card-title mt-2 pb-4">
-                                <strong>Book Shop</strong>
-                            </h3>
-                            <!--Text-->
-                            <p class="card-text">Implementation of a recommendation system used by e-commerce websites.
-                            </p>
-                            <a href="#" class="btn btn-blue-grey btn-md waves-effect waves-light">Button</a>
-                        </div>
-
+            <div class="jumbotron">
+                <form>
+                    <div class="form-group">
+                      <label for="book_name">Book Name</label>
+                      <input type="text" ng-model="book_name" class="form-control" id="book_name" placeholder="Enter Book Name">
                     </div>
-                    <!--/.Card-->
-                </div>
-            </div>
-            <!--/.First row-->
-
-            <!--Second row-->
-            <div class="row mt-5 pt-4">
-                <!--First columnn-->
-                <div class="col-lg-4" ng-repeat="x in booklist.data">
-                    <!--Card-->
-                    <div class="card mb-r wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
-
-                        <!--Card image-->
-                        <img class="img-fluid" src="./dark theam_files/15.jpg" alt="Card image cap">
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">
-                                <strong>{{x.book_name}}</strong>
-                            </h4>
-                            <h5 class="card-title">
-                                Author :: {{x.author_name}}
-                            </h5>
-                            <h5 class="card-title">
-                                Category :: {{x.category}}
-                            </h5>
-                            <h5 class="card-title">
-                                Price :: {{x.price}}
-                            </h5>
-                            <!--Text-->
-                            <p class="card-text">{{x.pages}} pages</p>
-                            <a href="#" class="btn btn-blue-grey btn-md waves-effect waves-light">Buy Now</a>
-                        </div>
-
+                    <div class="form-group">
+                      <label for="author_name">Author</label>
+                      <input type="text" ng-model="author_name" class="form-control" id="author_name" placeholder="Author Name">
                     </div>
-                    <!--/.Card-->
-                </div>
-                <!--First columnn-->
-                
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <input type="text" ng-model="category" class="form-control" id="category" placeholder="Category">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" ng-model="price" class="form-control" id="price" placeholder="Price">
+                    </div>
+                    <div class="form-group">
+                        <label for="pages">Pages</label>
+                        <input type="number" ng-model="pages" class="form-control" id="pages" placeholder="Pages">
+                    </div>
+                    <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+                  </form>
             </div>
-
         </div>
-        <!--/.Main layout-->
     </main>
 
     <!--Footer-->

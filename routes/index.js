@@ -3,27 +3,19 @@ var router = express.Router();
 var path = require('path');
 var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
+var bodyParser = require('body-parser')
 
 var app = express();
 app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 var url = "mongodb://localhost:27017/"
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-router.get('/book', (req, res) => {
+router.get('/', (req, res) => {
   res.sendFile(path.resolve('public/book.html'));
 })
-
-router.get('/api', (req, res) => {
-  res.status(200).send({message: 'Hello World!'})
-});
-
-
 
 router.get('/books', function (req, res) {
   var data;
@@ -38,6 +30,25 @@ router.get('/books', function (req, res) {
           res.send(JSON.stringify(data));
       }
   );
+  })
+})
+
+router.get('/addBook', function (req, res) {
+  res.sendFile(path.resolve('public/addBook.html'));
+})
+
+router.post('/addBookData', function(req, res){
+  var data;
+  console.log(req.body);
+  data = req.body;
+  mongo.connect(url,function(err,db){
+      assert.equal(null,err);
+      var dbo = db.db("books");
+      dbo.collection("book_list").insertOne(data, function(err, res) {
+        if (err) throw err;
+        console.log("1 book inserted");
+        db.close();
+      });
   })
 })
 
