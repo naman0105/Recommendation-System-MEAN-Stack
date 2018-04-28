@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0062)https://mdbootstrap.com/previews/freebies/jumbotron/index.html -->
-<html lang="en" ng-app="addBookApp" class="gr__mdbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en" ng-app="loginApp" class="gr__mdbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -52,7 +53,7 @@
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
-    <script src="addBook.js"></script>
+    <script src="login.js"></script>
 
 </head>
 
@@ -78,12 +79,9 @@
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-<<<<<<< HEAD
                         <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" href="/addBook">Login</a>
+                            <a class="nav-link waves-effect waves-light" href="/">Logout</a>
                         </li>
-=======
->>>>>>> 827d772e09491863db2bf9948b99f0c2798d1e9c
                     </ul>
                 </div>
             </div>
@@ -92,29 +90,17 @@
 
     </header>
 
-    <main ng-controller="addBook as app">
+    <main ng-controller="login as app">
         <div class="container">
             <div class="jumbotron">
                 <form>
                     <div class="form-group">
-                      <label for="book_name">Book Name</label>
-                      <input type="text" ng-model="book_name" class="form-control" id="book_name" placeholder="Enter Book Name">
+                      <label for="userName">User Name</label>
+                      <input type="text" ng-model="userName" class="form-control" id="userName" placeholder="User Name">
                     </div>
                     <div class="form-group">
-                      <label for="author_name">Author</label>
-                      <input type="text" ng-model="author_name" class="form-control" id="author_name" placeholder="Author Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Category</label>
-                        <input type="text" ng-model="category" class="form-control" id="category" placeholder="Category">
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Price</label>
-                        <input type="number" ng-model="price" class="form-control" id="price" placeholder="Price">
-                    </div>
-                    <div class="form-group">
-                        <label for="pages">Pages</label>
-                        <input type="number" ng-model="pages" class="form-control" id="pages" placeholder="Pages">
+                      <label for="password">Password</label>
+                      <input type="password" ng-model="password" class="form-control" id="password" placeholder=Password">
                     </div>
                     <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
                   </form>
@@ -175,8 +161,4 @@
 
 
 
-<<<<<<< HEAD
 <div class="hiddendiv common"></div></body></html>
-=======
-<div class="hiddendiv common"></div></body></html>
->>>>>>> 827d772e09491863db2bf9948b99f0c2798d1e9c

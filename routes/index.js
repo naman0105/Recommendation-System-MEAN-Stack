@@ -52,4 +52,13 @@ router.post('/addBookData', function(req, res){
   })
 })
 
+router.get('/login', function (req, res) {
+
+  //req.session.userName=myDet["emailId"];
+  res.sendFile(path.resolve('public/login.html'));
+
+
+
+})
+
 module.exports = router;
