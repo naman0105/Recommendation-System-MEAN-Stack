@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://mdbootstrap.com/previews/freebies/jumbotron/index.html -->
+<html lang="en" ng-app="booksapp" class="gr__mdbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Material Design Bootstrap</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css"  href="./dark theam_files/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./dark theam_files/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="./dark theam_files/mdb.min.css" type="text/css"  rel="stylesheet">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+
+        main {
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+        }
+
+        .extra-margins {
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .jumbotron {
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #274e68;
+        }
+
+        footer.page-footer {
+            background-color: #274e68;
+            margin-top: 2rem;
+        }
+
+        .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+        }
+
+        .navbar .btn-group .dropdown-menu a:active {
+            color: #fff !important;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+    <script src="book.js"></script>
+
+</head>
+
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+
+    <header>
+
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link waves-effect waves-light" href="#">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="/addBook">Add book</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="/login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--/.Navbar-->
+
+    </header>
+
+    <main ng-controller="books as app">
+
+        <!--Main layout-->
+        <div class="container">
+            <!--First row-->
+            <div class="row wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+                <div class="col-md-12">
+                    <!--Card-->
+                    <div class="card">
+                        <!--Card content-->
+                        <div class="card-body text-center mb-3">
+                            <!--Title-->
+                            <h3 class="card-title mt-2 pb-4">
+                                <strong>Book Shop</strong>
+                            </h3>
+                            <!--Text-->
+                            <p class="card-text">Implementation of a recommendation system used by e-commerce websites.
+                            </p>
+                            <a href="#" class="btn btn-blue-grey btn-md waves-effect waves-light">Button</a>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+            </div>
+            <!--/.First row-->
+
+            <!--Second row-->
+            <div class="row mt-5 pt-4">
+                <!--First columnn-->
+                <div class="col-lg-4" ng-repeat="x in booklist.data">
+                    <!--Card-->
+                    <div class="card mb-r wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+
+                        <!--Card image-->
+                        <img class="img-fluid" src="./dark theam_files/15.jpg" alt="Card image cap">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">
+                                <strong>{{x.book_name}}</strong>
+                            </h4>
+                            <h5 class="card-title">
+                                Author :: {{x.author_name}}
+                            </h5>
+                            <h5 class="card-title">
+                                Category :: {{x.category}}
+                            </h5>
+                            <h5 class="card-title">
+                                Price :: {{x.price}}
+                            </h5>
+                            <!--Text-->
+                            <p class="card-text">{{x.pages}} pages</p>
+                            <a href="#" class="btn btn-blue-grey btn-md waves-effect waves-light">Buy Now</a>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--First columnn-->
+
+            </div>
+
+        </div>
+        <!--/.Main layout-->
+    </main>
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+        <hr>
+        <!--Call to action-->
+        <div class="call-to-action">
+            <h4 class="mb-5">Material Design for Bootstrap</h4>
+            <ul>
+                <li>
+                    <h5>Get our UI KIT for free</h5>
+                </li>
+                <li>
+                    <a target="_blank" href="https://mdbootstrap.com/getting-started/" class="btn btn-primary waves-effect waves-light" rel="nofollow">Sign up!</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-deep-orange waves-effect waves-light" rel="nofollow">Learn more</a>
+                </li>
+            </ul>
+        </div>
+        <!--/.Call to action-->
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2015 Copyright:
+                <a href="https://www.mdbootstrap.com/"> MDBootstrap.com </a>
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="./dark theam_files/jquery-3.1.1.min.js.download"></script>
+
+    <!-- Bootstrap dropdown -->
+    <script type="text/javascript" src="./dark theam_files/popper.min.js.download"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="./dark theam_files/bootstrap.min.js.download"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="./dark theam_files/mdb.min.js.download"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+
+
+<div class="hiddendiv common"></div></body></html>

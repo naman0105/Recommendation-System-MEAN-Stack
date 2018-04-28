@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://mdbootstrap.com/previews/freebies/jumbotron/index.html -->
+<html lang="en" ng-app="loginApp" class="gr__mdbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Material Design Bootstrap</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./dark theam_files/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./dark theam_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="./dark theam_files/mdb.min.css" rel="stylesheet">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+
+        main {
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+        }
+
+        .extra-margins {
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .jumbotron {
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #274e68;
+        }
+
+        footer.page-footer {
+            background-color: #274e68;
+            margin-top: 2rem;
+        }
+
+        .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+        }
+
+        .navbar .btn-group .dropdown-menu a:active {
+            color: #fff !important;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+    <script src="login.js"></script>
+
+</head>
+
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+
+    <header>
+
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="/">Home
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link waves-effect waves-light" href="/addBook">Add book
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" href="/">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--/.Navbar-->
+
+    </header>
+
+    <main ng-controller="login as app">
+        <div class="container">
+            <div class="jumbotron">
+                <form>
+                    <div class="form-group">
+                      <label for="userName">User Name</label>
+                      <input type="text" ng-model="userName" class="form-control" id="userName" placeholder="User Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" ng-model="password" class="form-control" id="password" placeholder=Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+                  </form>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+        <hr>
+        <!--Call to action-->
+        <div class="call-to-action">
+            <h4 class="mb-5">Material Design for Bootstrap</h4>
+            <ul>
+                <li>
+                    <h5>Get our UI KIT for free</h5>
+                </li>
+                <li>
+                    <a target="_blank" href="https://mdbootstrap.com/getting-started/" class="btn btn-primary waves-effect waves-light" rel="nofollow">Sign up!</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-deep-orange waves-effect waves-light" rel="nofollow">Learn more</a>
+                </li>
+            </ul>
+        </div>
+        <!--/.Call to action-->
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2015 Copyright:
+                <a href="https://www.mdbootstrap.com/"> MDBootstrap.com </a>
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="./dark theam_files/jquery-3.1.1.min.js.download"></script>
+
+    <!-- Bootstrap dropdown -->
+    <script type="text/javascript" src="./dark theam_files/popper.min.js.download"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="./dark theam_files/bootstrap.min.js.download"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="./dark theam_files/mdb.min.js.download"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+
+
+<div class="hiddendiv common"></div></body></html>

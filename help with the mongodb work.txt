@@ -1,0 +1,4 @@
+1. type mongod in the command to activate mongodb in the laptop (can type mongod --dbpath or something like that to change the path)
+2. type mongo in the command to start the terminal to execute the mongodb commands
+3. use books
+4. db.book_list.insert({ "name" : "Name of the wind", "pages" : 400, "price" : 600, "category" : "fiction", "author" : "Rothfuss" })
