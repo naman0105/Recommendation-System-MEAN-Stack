@@ -2,6 +2,7 @@ angular.module('booksapp', [])
 .controller('books', function($scope, $http) {
  // Initialize variables
   $scope.books = []
+  $scope.buybookmessage = "";
   $scope.removeBook = function(name){
     var index = $scope.books.indexOf(name);
     $scope.books.splice(index, 1); 
@@ -19,6 +20,7 @@ angular.module('booksapp', [])
       console.log("successfull insertion of user and books")
     })
     $scope.books = []
+    $scope.buybookmessage = "Thank you for buying books at bookstore"
   }
   $http.get('/books').then(function(response){
       console.log(response);
