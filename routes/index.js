@@ -56,8 +56,11 @@ router.post('/addBookData', function(req, res){
 router.get('/login', function (req, res) {
   //req.session.userName=myDet["emailId"];
   res.sendFile(path.resolve('public/login.html'));
-})
-
+});
+router.get('/userProfile', function (req, res) {
+  //req.session.userName=myDet["emailId"];
+  res.sendFile(path.resolve('public/userProfile.html'));
+});
 
     router.get('/loginuser', function(req,res){
       console.log("from the back-end" + req.query.name);
