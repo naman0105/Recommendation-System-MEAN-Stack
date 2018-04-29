@@ -4,7 +4,6 @@ var path = require('path');
 var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
 var bodyParser = require('body-parser')
-var mongoAPI = require('./mongoDBAPI');
 
 var app = express();
 app.use(express.static('public'));
@@ -56,22 +55,21 @@ router.post('/addBookData', function(req, res){
 router.get('/login', function (req, res) {
   //req.session.userName=myDet["emailId"];
   res.sendFile(path.resolve('public/login.html'));
-});
-router.get('/userProfile', function (req, res) {
-  //req.session.userName=myDet["emailId"];
-  res.sendFile(path.resolve('public/userProfile.html'));
-});
+})
 
-    router.get('/loginuser', function(req,res){
-      console.log("from the back-end" + req.query.name);
-      data = { name : req.query.name, books : [] }
-      console.log(JSON.stringify(data))
-      mongoAPI.insertOnePurchaseData(data);
-      mongoAPI.displayPurchaseData();
-
-});
-
+router.get('/loginuser', function(req,res){
+  console.log("from the back-end" + req.query.name);
+  data = { name : req.query.name, books : [] }
+  mongo.connect(url,function(err,db){
+    assert.equal(null,err);
+    var dbo = db.db("books");
+    dbo.collection("users").insertOne(data, function(err, res) {
+      if (err) throw err;
+      console.log("1 user inserted");
+      db.close();
+    });
+  });
   console.log("hello hi")
   // router.redirect('/');
-
+})
 module.exports = router;
