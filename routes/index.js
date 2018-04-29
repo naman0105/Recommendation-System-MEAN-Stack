@@ -66,8 +66,8 @@ router.get('/userProfile', function (req, res) {
       console.log("from the back-end" + req.query.name);
       data = { name : req.query.name, books : [] }
       console.log(JSON.stringify(data))
-      mongoAPI.insertOneData(data);
-      mongoAPI.displayData();
+      mongoAPI.insertOnePurchaseData(data);
+      mongoAPI.displayPurchaseData();
 
 });
 
