@@ -4,7 +4,6 @@ var path = require('path');
 var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
 var bodyParser = require('body-parser')
-var mongoAPI = require('./mongoDBAPI');
 
 var app = express();
 app.use(express.static('public'));
@@ -56,6 +55,7 @@ router.post('/addBookData', function(req, res){
 router.get('/login', function (req, res) {
   //req.session.userName=myDet["emailId"];
   res.sendFile(path.resolve('public/login.html'));
+
 });
 
 router.get('/userProfile', function (req, res) {
