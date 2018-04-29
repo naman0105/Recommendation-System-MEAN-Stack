@@ -6,7 +6,7 @@ var mongoClass = function() {
   ;
 }
 
-mongoClass.prototype.insertOneData = function(insertJsonObject){
+mongoClass.prototype.insertOnePurchaseData = function(insertJsonObject){
   mongo.connect(url,function(err,db){
     var dbo = db.db("books");
     dbo.collection("users").insertOne(insertJsonObject, function(err, res) {
@@ -18,7 +18,7 @@ mongoClass.prototype.insertOneData = function(insertJsonObject){
   })
 }
 
-mongoClass.prototype.displayData = function(){
+mongoClass.prototype.displayPurchaseData = function(){
   mongo.connect(url,function(err,db){
     var dbo = db.db("books");
     dbo.collection("users").find({}).toArray(function(err, result) {
