@@ -18,6 +18,7 @@ angular.module('booksapp', [])
     $http.post('/insertUserAndBooks',data).then(function(response){
       console.log("successfull insertion of user and books")
     })
+    $scope.books = []
   }
   $http.get('/books').then(function(response){
       console.log(response);
