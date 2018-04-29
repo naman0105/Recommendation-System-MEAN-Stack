@@ -132,7 +132,7 @@
                             </h5>
                             <!--Text-->
                             <p class="card-text">{{x.pages}} pages</p>
-                            <a href="#" class="btn btn-blue-grey btn-md waves-effect waves-light">Buy Now</a>
+                            <button ng-click="addBookName(x.book_name)" class="btn btn-blue-grey btn-md waves-effect waves-light">Buy Now</button>
                         </div>
 
                     </div>
@@ -143,6 +143,35 @@
 
         </div>
         <!--/.Main layout-->
+    <hr>
+    <center ng-if="books[0]"><h3>Books Added to the cart</h3></center>
+        <div class="jumbotron">
+            <div class="row mt-5 pt-4">
+                <!--First columnn-->
+                <div class="col-lg-4" ng-repeat="x in books">
+                    <!--Card-->
+                    <div class="card mb-r wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s; width:50%; height: 70% ">
+    
+                        <!--Card image-->
+                        <img class="img-fluid" src="./dark theam_files/15.jpg" alt="Card image cap">
+    
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">
+                                <strong>{{x}}</strong>
+                            </h4>
+                            <!--Text-->
+                            <button ng-click="removeBook(x)" class="btn btn-blue-grey btn-md waves-effect waves-light">Remove Book</button>
+                        </div>
+    
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--First columnn-->
+            </div>
+            <button class="btn btn-blue-grey btn-md waves-effect waves-light" ng-if="books[0]" ng-click="insertDatabase()">Checkout</button>
+        </div>
     </main>
 
     <!--Footer-->
