@@ -9,11 +9,19 @@ angular.module('booksapp', [])
   }
   $scope.addBookName = function(name){
     $scope.books.push(name);
+    var data = {
+      user_name : $scope.userName,
+      book_list : $scope.books
+    }
     console.log($scope.books)
+    $http.post('/bookRecommendations',data).then(function(response){
+      console.log("books recommendations");
+      console.log(response);
+    })
   }
   $scope.insertDatabase = function(){
     var data = {
-      user : $scope.userName,
+      user_name : $scope.userName,
       book_list : $scope.books
     }
     $http.post('/insertUserAndBooks',data).then(function(response){

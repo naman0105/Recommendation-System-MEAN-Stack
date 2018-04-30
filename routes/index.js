@@ -5,6 +5,7 @@ var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
 var bodyParser = require('body-parser')
 
+var mongoAPI = require('./mongoDBAPI');
 var app = express();
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -75,4 +76,6 @@ router.post('/insertUserAndBooks',function(req,res){
   mongoAPI.insertOnePurchaseData(data);
   mongoAPI.displayPurchaseData();
 })
+
+
 module.exports = router;

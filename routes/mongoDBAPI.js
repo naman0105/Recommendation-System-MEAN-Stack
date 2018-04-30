@@ -9,7 +9,7 @@ var mongoClass = function() {
 mongoClass.prototype.insertOnePurchaseData = function(insertJsonObject){
   mongo.connect(url,function(err,db){
     var dbo = db.db("books");
-    dbo.collection("users").insertOne(insertJsonObject, function(err, res) {
+    dbo.collection("user_books").insertOne(insertJsonObject, function(err, res) {
     if (err)
       throw err;
     console.log("1 user inserted");
