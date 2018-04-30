@@ -1,12 +1,14 @@
+var mongoAPI = require('./mongoDBAPI');
 
-var trainningData = [{user_name:"san", book_list:["book1","book2","book3"]},
-{user_name:"san", book_list:["book1","book4","book3"]},
-{user_name:"san",book_list:["book1","book2"]},
-{user_name:"san", book_list:["book1","book2","book3", "book7","book9"]},
-{user_name:"san", book_list:["book1","book2","book3"]},
-{user_name:"san", book_list:["book1","book20"]},
-{user_name:"san", book_list:["book1","book12","book13","book14","book2","book6","book5"]}
-];
+// var trainningData = [{user_name:"san", book_list:["book1","book2","book3"]},
+// {user_name:"san", book_list:["book1","book4","book3"]},
+// {user_name:"san",book_list:["book1","book2"]},
+// {user_name:"san", book_list:["book1","book2","book3", "book7","book9"]},
+// {user_name:"san", book_list:["book1","book2","book3"]},
+// {user_name:"san", book_list:["book1","book20"]},
+// {user_name:"san", book_list:["book1","book12","book13","book14","book2","book6","book5"]}
+// ];
+
 
 var bayesClassifier = function() {
    this.uniqueDictionary = {};
@@ -196,6 +198,6 @@ bayesClassifier.prototype.getBest3Books = function (N = 3){
 
 
 var bayes = new bayesClassifier();
-bayes.setClassifer(trainningData);
-bayes.classify(["book1", "book2"]);
+// bayes.setClassifer(trainningData);
+// bayes.classify(["book1", "book2"]);
 module.exports = bayes;

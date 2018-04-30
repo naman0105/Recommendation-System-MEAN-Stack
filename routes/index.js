@@ -5,6 +5,7 @@ var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
 var bodyParser = require('body-parser')
 
+var bayesAPI = require('./bayesAPI');
 var mongoAPI = require('./mongoDBAPI');
 var app = express();
 app.use(express.static('public'));
@@ -80,5 +81,8 @@ router.post('/insertUserAndBooks',function(req,res){
 router.post('/bookRecommendations', function(req, res){
   console.log("from book recommendations");
   console.log(req.body);
+  var trainningData = mongoAPI.displayPurchaseData();
+  bayesAPI.setClassifer(trainningData);
+  console.log(" Comming from the classifier "+bayesAPI.classify(req.body));  
 })
 module.exports = router;

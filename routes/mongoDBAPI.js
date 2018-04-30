@@ -6,6 +6,7 @@ var mongoClass = function() {
   ;
 }
 
+
 mongoClass.prototype.insertOnePurchaseData = function(insertJsonObject){
   mongo.connect(url,function(err,db){
     var dbo = db.db("books");
@@ -21,7 +22,7 @@ mongoClass.prototype.insertOnePurchaseData = function(insertJsonObject){
 mongoClass.prototype.displayPurchaseData = function(){
   mongo.connect(url,function(err,db){
     var dbo = db.db("books");
-    dbo.collection("users").find({}).toArray(function(err, result) {
+    dbo.collection("user_books").find({}).toArray(function(err, result) {
       if (err) throw err;
       console.log(result);
       db.close();
