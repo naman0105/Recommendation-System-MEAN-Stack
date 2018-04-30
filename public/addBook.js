@@ -24,8 +24,8 @@ angular.module('addBookApp', [])
     console.log(data)
     $http.post('/addBookData',data).then(function(success){
          console.log("sending successfull");
-         $window.open("/");
     });
+  window.location.href = "/";
   }
 })
 
