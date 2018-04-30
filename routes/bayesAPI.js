@@ -98,6 +98,9 @@ bayesClassifier.prototype.classify = function (evidence){
   var hypothPriorProbab = 1;
   var conditionalProbabProd = 1;
   var posteriorProbab = 1;
+  this.predictionDictionary = {};
+  console.log("evidence is"+evidence);
+
   for(var i = 0; i < evidence.length; i++)
   {
     evidencePriorProduct *= this.priorProbability(evidence[i]);
