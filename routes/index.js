@@ -77,5 +77,8 @@ router.post('/insertUserAndBooks',function(req,res){
   mongoAPI.displayPurchaseData();
 })
 
-
+router.post('/bookRecommendations', function(req, res){
+  console.log("from book recommendations");
+  console.log(req.body);
+})
 module.exports = router;
