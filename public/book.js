@@ -14,6 +14,7 @@ angular.module('booksapp', [])
     $http.post('/bookRecommendations',$scope.books).then(function(response){
       console.log("books recommendations");
       var resp = response.data;
+      $scope.recommendations = [];
       for(var i = 0; i < resp.length; i++)
       {
         if(resp[i] != null)
