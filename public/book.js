@@ -5,14 +5,14 @@ angular.module('booksapp', [])
   $scope.buybookmessage = "";
   $scope.removeBook = function(name){
     var index = $scope.books.indexOf(name);
-    $scope.books.splice(index, 1); 
+    $scope.books.splice(index, 1);
   }
   $scope.addBookName = function(name){
     $scope.books.push(name);
     console.log($scope.books)
     $http.post('/bookRecommendations',$scope.books).then(function(response){
       console.log("books recommendations");
-      console.log(response);
+      console.log(response.data);
     })
   }
   $scope.insertDatabase = function(){

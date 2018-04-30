@@ -87,8 +87,8 @@ router.post('/bookRecommendations', function(req, res){
     console.log("the training datq " + trainningData)
     bayesAPI.setClassifer(trainningData);
     var recommendations = bayesAPI.classify(req.body);
-    console.log(" Comming from the classifier "+ recommendations); 
-    return recommendations;
+    console.log(" Comming from the classifier "+ recommendations);
+    res.send(recommendations);
   }
   mongoAPI.displayPurchaseData(callback);
 })

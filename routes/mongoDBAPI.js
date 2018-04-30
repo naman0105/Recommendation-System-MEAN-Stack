@@ -24,8 +24,10 @@ mongoClass.prototype.displayPurchaseData = function(callback){
     var dbo = db.db("books");
     dbo.collection("user_books").find({}).toArray(function(err, result) {
       if (err) throw err;
+      console.log("Displaying information of books");
       console.log(result);
-      //  callback(result);
+      if(callback != undefined)
+        callback(result);
       db.close();
     });
   })
