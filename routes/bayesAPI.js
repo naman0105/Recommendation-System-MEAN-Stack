@@ -118,9 +118,9 @@ bayesClassifier.prototype.classify = function (evidence){
     }
 
   }
-  this.getBest3Books();
 
-
+  this.sendBackList = this.getBest3Books();
+  console.log("sending results:" + this.sendBackList);
   console.log("probab:"+JSON.stringify(this.predictionDictionary));
 
   return this.sendBackList;
@@ -167,6 +167,7 @@ bayesClassifier.prototype.priorProbability = function (a){
 
 bayesClassifier.prototype.getBest3Books = function (N = 3){
   var books = Object.keys(this.predictionDictionary);
+  var bestList = [];
   console.log("books pref before:" + books);
   var sendBackList = [];
   for(var i = 0; i < books.length - 1; i++)
@@ -185,9 +186,9 @@ bayesClassifier.prototype.getBest3Books = function (N = 3){
   console.log("books pref after:" + books);
   for(var i = 0; i < N; i++)
   {
-    this.sendBackList.push(books[i]);
+    bestList.push(books[i]);
   }
-  console.log("sending result:" + this.sendBackList);
+  return bestList;
 
 }
 
