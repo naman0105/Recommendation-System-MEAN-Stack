@@ -16,6 +16,7 @@ var bayesClassifier = function() {
    this.noColumns = 0;
    this.booksList = [];
    this.predictionDictionary = {};
+   this.sendBackList = [];
 }
 
 
@@ -117,10 +118,12 @@ bayesClassifier.prototype.classify = function (evidence){
     }
 
   }
+  this.getBest3Books();
 
 
   console.log("probab:"+JSON.stringify(this.predictionDictionary));
 
+  return this.sendBackList;
 
 
 }
@@ -162,9 +165,36 @@ bayesClassifier.prototype.priorProbability = function (a){
 
 }
 
+bayesClassifier.prototype.getBest3Books = function (N = 3){
+  var books = Object.keys(this.predictionDictionary);
+  console.log("books pref before:" + books);
+  var sendBackList = [];
+  for(var i = 0; i < books.length - 1; i++)
+  {
+    for(var j = 0; j < books.length - i - 1; j++)
+    {
+      console.log(this.predictionDictionary[books[j]]);
+      if(this.predictionDictionary[books[j]] < this.predictionDictionary[books[j+1]])
+      {
+        var temp = books[j];
+        books[j] = books[j+1];
+        books[j+1] = temp;
+      }
+    }
+  }
+  console.log("books pref after:" + books);
+  for(var i = 0; i < N; i++)
+  {
+    this.sendBackList.push(books[i]);
+  }
+  console.log("sending result:" + this.sendBackList);
+
+}
+
+
 
 
 var bayes = new bayesClassifier();
 bayes.setClassifer(trainningData);
-bayes.classify(["book1","book2"]);
+bayes.classify(["book1", "book2"]);
 module.exports = bayes;
