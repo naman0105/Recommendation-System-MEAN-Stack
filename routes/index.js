@@ -84,10 +84,10 @@ router.post('/bookRecommendations', function(req, res){
   var trainningData;
   var callback = function(result){
     trainningData = result;
+    console.log("the training datq " + trainningData)
+    bayesAPI.setClassifer(trainningData);
+    console.log(" Comming from the classifier "+bayesAPI.classify(req.body)); 
   }
   mongoAPI.displayPurchaseData(callback);
-  console.log("the training datq " + trainningData)
-  bayesAPI.setClassifer(trainningData);
-  console.log(" Comming from the classifier "+bayesAPI.classify(req.body));  
 })
 module.exports = router;
