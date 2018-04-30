@@ -25,7 +25,7 @@ mongoClass.prototype.displayPurchaseData = function(callback){
     dbo.collection("user_books").find({}).toArray(function(err, result) {
       if (err) throw err;
       console.log(result);
-      // callback(result);
+      //  callback(result);
       db.close();
     });
   })
