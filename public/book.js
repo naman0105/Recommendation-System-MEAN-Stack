@@ -1,7 +1,8 @@
 angular.module('booksapp', [])
 .controller('books', function($scope, $http) {
  // Initialize variables
-  $scope.books = []
+  $scope.books = [];
+  $scope.recommendations = [];
   $scope.buybookmessage = "";
   $scope.removeBook = function(name){
     var index = $scope.books.indexOf(name);
@@ -12,7 +13,17 @@ angular.module('booksapp', [])
     console.log($scope.books)
     $http.post('/bookRecommendations',$scope.books).then(function(response){
       console.log("books recommendations");
+      var resp = response.data;
+      for(var i = 0; i < resp.length; i++)
+      {
+        if(resp[i] != null)
+        {
+            $scope.recommendations.push(resp[i]);
+        }
+      }
+
       console.log(response.data);
+      console.log($scope.recommendations);
     })
   }
   $scope.insertDatabase = function(){
